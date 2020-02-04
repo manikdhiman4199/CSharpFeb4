@@ -16,31 +16,40 @@ namespace ConsoleApp2
             L1.setName("Leo");
             T1.setName("Tiggy");
             Console.WriteLine("Lion's name is {0}", L1.getName());
-            Console.WriteLine("Lion's name is {0}", L1.getName());
+            Console.WriteLine("Lion's strength is {0}", L1.getStrength());
             Console.WriteLine("Tiger's name is {0}", T1.getName());
-            Console.WriteLine("Tiger's name is {0}", T1.getName());
+            Console.WriteLine("Tiger's strength is {0}", T1.getStrength());
         }
 
     }
     class Feline
-    {       // Class STATIC variables:
-            // they keep the SAME value for all OBJECTS of that Class
-            // Class INSTANCE VARIABLES
-            // all objects have UNIQUE version of that data field
+    {
         Random r1 = new Random();
-
-            String Name;
-            int Strength() {
-                        return (int)r1.NextDouble()*100;
+        int Strength;
+        String Name;
+        public Feline()
+            {
+                Console.WriteLine("Yeah! we are in the constructor!");
+                this.Strength = this.setStrength();
+            }
+ 
+            public int setStrength() {
+            Strength = (int)r1.Next(1,100);
+                        return Strength;
             }
             public String getName()
             {
                 return this.Name;
             }
-            public void setName(String aName)
-            {   //variable scoping:
-                this.Name = aName;
+
+            public int getStrength()
+            {
+                return this.Strength;
             }
+            public void setName(String aName)
+                {   //variable scoping:
+                    this.Name = aName;
+                }
     }
     class Lion:Feline
     {
@@ -52,4 +61,3 @@ namespace ConsoleApp2
         
     }
 }
-
