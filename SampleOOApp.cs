@@ -16,15 +16,22 @@ namespace ConsoleApp2
             L1.setName("Leo");
             T1.setName("Tiggy");
             Console.WriteLine("Lion's name is {0}", L1.getName());
+            Console.WriteLine("Lion's name is {0}", L1.getName());
+            Console.WriteLine("Tiger's name is {0}", T1.getName());
             Console.WriteLine("Tiger's name is {0}", T1.getName());
         }
 
     }
     class Feline
-    {
+    {       // Class STATIC variables:
+            // they keep the SAME value for all OBJECTS of that Class
+            // Class INSTANCE VARIABLES
+            // all objects have UNIQUE version of that data field
+        Random r1 = new Random();
+
             String Name;
             int Strength() {
-                        return 0;
+                        return (int)r1.NextDouble()*100;
             }
             public String getName()
             {
@@ -45,3 +52,4 @@ namespace ConsoleApp2
         
     }
 }
+
