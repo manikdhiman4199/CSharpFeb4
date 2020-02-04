@@ -11,14 +11,25 @@ namespace ConsoleApp2
 
         public static void DoCompetition()
         {
-            Lion L1 = new Lion();
-            Tiger T1 = new Tiger();
-            L1.setName("Leo");
-            T1.setName("Tiggy");
-            Console.WriteLine("Lion's name is {0}", L1.getName());
-            Console.WriteLine("Lion's strength is {0}", L1.getStrength());
-            Console.WriteLine("Tiger's name is {0}", T1.getName());
-            Console.WriteLine("Tiger's strength is {0}", T1.getStrength());
+            int NumberOfLionWinners = 0;
+            int NumberOfTigerWinners = 0;
+            int LionStrength, TigerStrength = 0;
+            for (int i = 0; i < length; i++)
+            {
+                LionStrength = (new Lion()).getStrength();
+                TigerStrength = (new Tiger()).getStrength();
+                if (LionStrength > TigerStrength)
+                {
+                    NumberOfLionWinners++;
+                }
+                else {NumberOfTigerWinners++; }
+            }
+
+
+
+
+
+
         }
 
     }
